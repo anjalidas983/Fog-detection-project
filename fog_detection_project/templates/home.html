@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fog-detection</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+ <link rel="stylesheet" href="{% static 'home.css' %}">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  </head>
+<body style="background-color: rgb(216, 216, 223);">
+
+  <nav class="navbar-nav navbar-expand-lg navbar-light bg-danger p-4">
+  <a class="navbar-brand" href="{% url 'fog_detection:home' %}" style="color: white;font-weight: bold;">FOG DETECTION</a>
+
+  </nav>
+
+  <div class="pt-4">
+  <h2 style="font-weight:bold ;" class="text-danger">DETECT FOG ON YOUR VIDEO </h2>
+<div class="form-container">
+<form method="POST" enctype="multipart/form-data">
+  {% csrf_token %}
+  <div class="text-center">
+  <input type="file" name="video_file">
+ 
+  <input  type="submit" value="Upload and Detect Fog">
+</div>
+
+</form>
+</div>
+</div>
+
+
+</body>
+</html>
